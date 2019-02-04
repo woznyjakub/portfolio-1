@@ -1,65 +1,41 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { Caption } from '../../components'
-const FurtherSkills = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        gatsby: file(relativePath: { eq: "gatsby.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+import IconsWrapper from './icons-wrapper'
 
-        webpack: file(relativePath: { eq: "webpack.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+import gatsbyIcon from '../../images/gatsby.png'
+import webpackIcon from '../../images/webpack.png'
+import gitIcon from '../../images/git.png'
+import linuxIcon from '../../images/linux.png'
 
-        git: file(relativePath: { eq: "git.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-
-        linux: file(relativePath: { eq: "linux.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <div>
-          <Img fluid={data.gatsby.childImageSharp.fluid} />
-          <Caption>GatsbyJS</Caption>
-        </div>
-        <div>
-          <Img fluid={data.webpack.childImageSharp.fluid} />
-          <Caption>Webpack</Caption>
-        </div>
-        <div>
-          <Img fluid={data.git.childImageSharp.fluid} />
-          <Caption>Git</Caption>
-        </div>
-        <div>
-          <Img fluid={data.linux.childImageSharp.fluid} />
-          <Caption>Linux</Caption>
-        </div>
-      </>
-    )}
-  />
-)
+const FurtherSkills = () => {
+  const iconsData = [
+    {
+      url: gatsbyIcon,
+      caption: 'GatsbyJS',
+    },
+    {
+      url: webpackIcon,
+      caption: 'Webpack',
+    },
+    {
+      url: gitIcon,
+      caption: 'Git',
+    },
+    {
+      url: linuxIcon,
+      caption: 'Linux',
+    },
+  ]
+  return (
+    <>
+      {iconsData.map(({ url, caption }, i, arr) => (
+        <IconsWrapper childAmount={arr.length} key={i}>
+          <img src={url} alt={caption} />
+          <Caption>{caption}</Caption>
+        </IconsWrapper>
+      ))}
+    </>
+  )
+}
 
 export default FurtherSkills

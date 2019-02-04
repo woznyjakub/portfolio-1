@@ -1,89 +1,51 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { Caption } from '../../components'
-const BasicSkills = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        html: file(relativePath: { eq: "html.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+import IconsWrapper from './icons-wrapper'
 
-        css: file(relativePath: { eq: "css.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+import htmlIcon from '../../images/html.png'
+import cssIcon from '../../images/css.png'
+import jsIcon from '../../images/js.jpg'
+import sassIcon from '../../images/sass.png'
+import reactIcon from '../../images/react.png'
+import styledComponentsIcon from '../../images/styled.jpg'
 
-        js: file(relativePath: { eq: "js.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-
-        sass: file(relativePath: { eq: "sass.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-
-        react: file(relativePath: { eq: "react.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-
-        styled: file(relativePath: { eq: "styled.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 128) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <div>
-          <Img fluid={data.html.childImageSharp.fluid} />
-          <Caption>HTML</Caption>
-        </div>
-        <div>
-          <Img fluid={data.css.childImageSharp.fluid} />
-          <Caption>CSS</Caption>
-        </div>
-        <div>
-          <Img fluid={data.js.childImageSharp.fluid} />
-          <Caption>JavaScript</Caption>
-        </div>
-        <div>
-          <Img fluid={data.sass.childImageSharp.fluid} />
-          <Caption>Sass</Caption>
-        </div>
-        <div>
-          <Img fluid={data.react.childImageSharp.fluid} />
-          <Caption>React</Caption>
-        </div>
-        <div>
-          <Img fluid={data.styled.childImageSharp.fluid} />
-          <Caption>Styled Components</Caption>
-        </div>
-      </>
-    )}
-  />
-)
+const BasicSkills = () => {
+  const iconsData = [
+    {
+      url: htmlIcon,
+      caption: 'HTML',
+    },
+    {
+      url: cssIcon,
+      caption: 'CSS',
+    },
+    {
+      url: jsIcon,
+      caption: 'JavaScript',
+    },
+    {
+      url: sassIcon,
+      caption: 'Sass',
+    },
+    {
+      url: reactIcon,
+      caption: 'React',
+    },
+    {
+      url: styledComponentsIcon,
+      caption: 'Styled Components',
+    },
+  ]
+  return (
+    <>
+      {iconsData.map(({ url, caption }, i, arr) => (
+        <IconsWrapper childAmount={arr.length} key={i}>
+          <img src={url} alt={caption} />
+          <Caption>{caption}</Caption>
+        </IconsWrapper>
+      ))}
+    </>
+  )
+}
 
 export default BasicSkills

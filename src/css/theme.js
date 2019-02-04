@@ -1,22 +1,25 @@
 export const theme = {
   colors: {
-    // blue: '#0099ae',
-    // orange: '#fe8844',
+    blue: '#0099ae',
     green: '#36c096',
-    red: '#d82028',
+    navyblue: '#2c3b66',
+    red: '#fd4d59',
+    purple: '#6d5e92',
 
     lightgrey: '#f5f5f7',
+    grey: '#313132',
+    darkgrey: '#0a0a0a',
 
     white: '#fff',
     black: '#000',
     transparent: 'transparent',
 
-    semiTransparentGrey: '#222222bb',
+    semiTransparentBlack: '#00000090',
   },
   font(family, weight, style) {
     return `font-family: ${family}, sans-serif;
-        ${weight ? `font-weight: ${weight}` : ``};
-        ${style ? `font-style: ${style}` : ``};`
+        ${weight ? `font-weight: ${weight};` : ``}
+        ${style ? `font-style: ${style};` : ``}`
   },
   breakpoints: [
     {
@@ -47,5 +50,8 @@ export const theme = {
         return `@media (${type}-width: ${theme.breakpoints[i].value -
           (type === 'min' ? 0 : 1)}px)`
     })
+  },
+  timingFunctions: {
+    scale: 'cubic-bezier(.6,.05,.01,.99)',
   },
 }

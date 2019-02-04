@@ -1,11 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledCaption = styled.h3`
+const StyledCaption = styled.p`
   ${({ theme }) => theme.font('montserrat', '600')}
-  font-size: 13px;
+  font-size: 12px;
   text-align: center;
-  padding: 0.5rem 0;
+  margin: 0.25rem 0 1.45rem;
+  line-height: 1.25em;
+  hyphens: auto;
+
+  ${({ theme }) => theme.media('landscape')} {
+    font-size: 13px;
+  }
 `
 
 const Caption = ({ children, className }) => {

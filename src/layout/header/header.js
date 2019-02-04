@@ -5,7 +5,6 @@ import { Container } from '../../components'
 
 import Background from '../../images/blocks.jpg'
 const StyledHeader = styled.header`
-  /* position: relative; */
   background: url(${Background}) 100% 0% / 125% no-repeat;
   background-color: ${({ theme }) => theme.colors.lightgrey};
   font-family: 'Sorts Mill Goudy', serif;
@@ -42,20 +41,21 @@ const StyledWrapper = styled.div`
   }
 `
 const StyledHeading = styled.h1`
-  line-height: 1em;
+  line-height: 1.35em;
   font-family: inherit;
   font-size: ${({ fontSize }) => fontSize};
+  margin-bottom: 0;
 `
 
 const Header = () => (
-  <StyledHeader>
+  <StyledHeader className="scroll-destination">
     <StyledContainer>
       <StyledWrapper>
         <StyledHeading fontSize="1.75em">Jakub Woźny</StyledHeading>
         <StyledHeading as="h2" fontSize="1.45em">
           Front end developer
         </StyledHeading>
-        <StyledHeading as="h3" fontSize="1.25em" textAlign="right">
+        <StyledHeading as="h3" fontSize="1.25em">
           Portfolio
         </StyledHeading>
       </StyledWrapper>

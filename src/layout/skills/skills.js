@@ -1,17 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Container } from '../../components'
-import { Heading } from '../../components'
-import { Paragraph } from '../../components'
+import { Container, Heading, Paragraph } from '../../components'
 
 import BasicSkillsImages from './basic'
 import FurtherSkillsImages from './further'
 const StyledSection = styled.section`
-  padding: 40vh 1.5rem 4rem 1rem;
+  padding: 40vh 1.25rem 4rem 0.5rem;
   --slant: 3deg;
   transform: skewY(var(--slant));
-  margin-top: -50px;
+  margin: -50px 0 50px;
   background-color: ${({ theme }) => theme.colors.green};
   overflow: hidden;
   ${({ theme }) => theme.media('tablet')} {
@@ -29,7 +27,9 @@ const StyledSection = styled.section`
 const StyledContainer = styled(Container)`
   transform: skewY(calc(var(--slant) * -1));
   background-color: ${({ theme }) => theme.colors.lightgrey};
-  box-shadow: 16px 16px 0 0 ${({ theme }) => theme.colors.semiTransparentGrey};
+  box-shadow: 16px 16px 0 0 ${({ theme }) => theme.colors.semiTransparentBlack};
+  padding-left: 0;
+  padding-right: 0;
   ${({ theme }) => theme.media('desktop-large')} {
     width: 80%;
   }
@@ -42,13 +42,6 @@ const StyledImagesWrapper = styled.div`
   max-width: ${({ childAmount }) =>
     childAmount % 2 === 0 && childAmount % 3 !== 0 ? '450px' : '350px'};
   margin: 0 auto;
-  > div {
-    /* This could be done better when images are not provided by GraphQL.
-     * Flex-basis or width is required here, otherwise the GraphQL query will render images 0x0 px. */
-    flex-basis: ${({ childAmount }) =>
-      childAmount % 2 === 0 && childAmount % 3 !== 0 ? '20%' : '26%'};
-    max-width: 96px;
-  }
   ${({ theme }) => theme.media('tablet')} {
     max-width: initial;
     padding-left: 1rem;
@@ -57,50 +50,36 @@ const StyledImagesWrapper = styled.div`
       childAmount % 2 === 0 && childAmount % 3 !== 0
         ? 'center'
         : 'space-between'};
-    > div {
-      flex-basis: ${({ childAmount }) =>
-        childAmount % 2 === 0 && childAmount % 3 !== 0 ? '21%' : '13%'};
-      ${({ childAmount }) =>
-        childAmount % 2 === 0 && childAmount % 3 !== 0
-          ? 'margin: 0 0.5rem;'
-          : null};
-    }
-  }
-  ${({ theme }) => theme.media('desktop-small')} {
-    justify-content: center;
-    > div {
-      margin: 0 0.5rem;
-    }
-  }
-  ${({ theme }) => theme.media('desktop-large')} {
-    > div {
-      margin: 0 1rem;
+    ${({ theme }) => theme.media('desktop-small')} {
+      justify-content: center;
     }
   }
 `
 const Skills = () => (
-  <StyledSection>
+  <StyledSection className="scroll-destination">
     <StyledContainer>
-      <Heading>Technologies and utilities I use:</Heading>
+      <Heading>Technologies and utilities I work with</Heading>
       <StyledImagesWrapper childAmount="6" className="padding-responsive-top">
         <BasicSkillsImages />
       </StyledImagesWrapper>
       <Paragraph>
-        Carriage quitting securing be appetite it declared. High eyes kept so
-        busy feel call in. Would day nor ask walls known. But preserved
-        advantage are but and certainty earnestly enjoyment. Passage weather as
-        up am exposed. And natural related man subject. Eagerness get situation
-        his was delighted.
+        I'm a beginning front-end developer. I was using HTML, vanilla JS, SASS
+        and BEM methodology in my older projects. I think I know the basics of
+        JavaScript as well as it's required to start the adventure with
+        frameworks. Presently I'm learning React and I use CSS-in-JS library
+        Styled Components. I know that first job is a start of constant learning
+        and I'm open to get to know about new technologies.
       </Paragraph>
       <StyledImagesWrapper childAmount="4" className="padding-responsive-top">
         <FurtherSkillsImages />
       </StyledImagesWrapper>
       <Paragraph>
-        Carriage quitting securing be appetite it declared. High eyes kept so
-        busy feel call in. Would day nor ask walls known. But preserved
-        advantage are but and certainty earnestly enjoyment. Passage weather as
-        up am exposed. And natural related man subject. Eagerness get situation
-        his was delighted.
+        I love to use React-based GatsbyJS environment in more static projects.
+        I'm able to optimize and simply process graphics. I usually use
+        photopea.com, but I can do the same in Adobe Photoshop. I was working
+        with Git and Webpack, but my knowledge in this matter is rather basic. I
+        really like to work with Linux and it's terminal, I've got more
+        experience with debian-based distributions.
       </Paragraph>
     </StyledContainer>
   </StyledSection>

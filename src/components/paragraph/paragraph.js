@@ -10,6 +10,7 @@ const StyledParagraph = styled.p`
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   hyphens: auto;
+  text-align: justify;
 
   ${({ theme }) => theme.media('landscape')} {
     font-size: 15px;

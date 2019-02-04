@@ -5,11 +5,9 @@ import { theme } from '../css/theme'
 import '../css/reset.css'
 import GlobalStyle from '../css/global-style'
 
-import { Header } from '../layout'
-import { Skills } from '../layout'
+import { Header, Skills, Projects, Footer, Nav } from '../layout'
 
-import { MainContainer } from '../components'
-import { SEO } from '../components'
+import { MainContainer, SEO } from '../components'
 
 const IndexPage = () => (
   <>
@@ -18,9 +16,11 @@ const IndexPage = () => (
       <>
         <GlobalStyle />
         <MainContainer>
+          <Nav />
           <Header />
           <Skills />
-          <div style={{ height: `130vh` }} />
+          <Projects />
+          <Footer />
         </MainContainer>
       </>
     </ThemeProvider>
