@@ -63,23 +63,22 @@ const Skills = () => (
         <BasicSkillsImages />
       </StyledImagesWrapper>
       <Paragraph>
-        I'm a beginning front-end developer. I was using HTML, vanilla JS, SASS
-        and BEM methodology in my older projects. I think I know the basics of
-        JavaScript as well as it's required to start the adventure with
-        frameworks. Presently I'm learning React and I use CSS-in-JS library
-        Styled Components. I know that first job is a start of constant learning
-        and I'm open to get to know about new technologies.
+        I'm a beginning front-end developer. In my older projects, I was mainly
+        using HTML, vanilla JS, SASS and BEM, so I’m pretty familiar with these
+        concepts. In terms of JavaScript - I got the basics covered. Lately,
+        I've been learning React and using CSS-in-JS library Styled Components.
+        I have an urge to self-improvement, and a passion for continuous
+        learning, especially when new technologies are involved.
       </Paragraph>
       <StyledImagesWrapper childAmount="4" className="padding-responsive-top">
         <FurtherSkillsImages />
       </StyledImagesWrapper>
       <Paragraph>
-        I love to use React-based GatsbyJS environment in more static projects.
-        I'm able to optimize and simply process graphics. I usually use
-        photopea.com, but I can do the same in Adobe Photoshop. I was working
-        with Git and Webpack, but my knowledge in this matter is rather basic. I
-        really like to work with Linux and it's terminal, I've got more
-        experience with debian-based distributions.
+        I love using React-based GatsbyJS environment in more static projects.
+        I'm skilled in optimizing and processing graphics on the basic level. I
+        usually use photopea.com, however, I can do exactly the same in Adobe
+        Photoshop. I’ve been working with Git and Webpack, and my skills are
+        improving.
       </Paragraph>
     </StyledContainer>
   </StyledSection>
