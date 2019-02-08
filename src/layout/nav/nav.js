@@ -111,7 +111,7 @@ class Nav extends Component {
         behavior: 'smooth',
       })
     }
-    if (window.innerHeight < 768) this.setState({ menuActive: false })
+    if (window.innerWidth < 768) this.setState({ menuActive: false })
   }
   render() {
     const { menuActive } = this.state
