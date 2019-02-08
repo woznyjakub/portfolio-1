@@ -63,18 +63,18 @@ const Footer = () => {
         <StyledHeading>Contact</StyledHeading>
         <StyledIconsWrapper>
           <a
-            href="https://www.facebook.com/kuba.wozny.96"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <StyledIcon src={facebookIcon} alt="facebook icon" />
-          </a>
-          <a
             href="https://www.linkedin.com/in/jakub-wo%C5%BAny-98840b17a/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <StyledIcon src={linkedInIcon} alt="linked in icon" />
+          </a>
+          <a
+            href="https://www.facebook.com/kuba.wozny.96"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon src={facebookIcon} alt="facebook icon" />
           </a>
         </StyledIconsWrapper>
         <StyledCaption space>E-mail: jakub_wozny_01@wp.pl</StyledCaption>

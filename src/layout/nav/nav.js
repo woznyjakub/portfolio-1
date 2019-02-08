@@ -96,10 +96,21 @@ class Nav extends Component {
   }
 
   handleScrollingOnClick = index => {
-    window.scroll({
-      top: this.scrollDestinations[index].offsetTop - this.hamburgerHeight,
-      behavior: 'smooth',
-    })
+    // section with transform: skew(negative-value) returns incorrect offsetTop value.
+    if (index === 1) {
+      window.scroll({
+        top:
+          this.scrollDestinations[index].offsetTop -
+          this.hamburgerHeight +
+          window.innerHeight / (window.innerWidth < 768 ? 3 : 5),
+        behavior: 'smooth',
+      })
+    } else {
+      window.scroll({
+        top: this.scrollDestinations[index].offsetTop - this.hamburgerHeight,
+        behavior: 'smooth',
+      })
+    }
     if (window.innerHeight < 768) this.setState({ menuActive: false })
   }
   render() {
