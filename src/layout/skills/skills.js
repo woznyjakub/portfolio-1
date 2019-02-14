@@ -64,7 +64,7 @@ const Skills = () => (
       </StyledImagesWrapper>
       <Paragraph>
         I'm a beginning front-end developer. In my older projects, I was mainly
-        using HTML, vanilla JS, SASS and BEM, so I’m pretty familiar with these
+        using HTML, vanilla JS, Sass and BEM, so I’m pretty familiar with these
         concepts. In terms of JavaScript - I got the basics covered. Lately,
         I've been learning React and using CSS-in-JS library Styled Components.
         I have an urge to self-improvement, and a passion for continuous
@@ -76,7 +76,7 @@ const Skills = () => (
       <Paragraph>
         I love using React-based GatsbyJS environment in more static projects.
         I'm skilled in optimizing and processing graphics on the basic level. I
-        usually use photopea.com, however, I can do exactly the same in Adobe
+        usually use Photopea, however, I can do exactly the same in Adobe
         Photoshop. I’ve been working with Git and Webpack, and my skills are
         improving.
       </Paragraph>
